@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // css:['/assets/css/..'],
+    modules: [
+        '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
+      ],
     app:{
         head:{
             title:'Nuxt Dojo',
