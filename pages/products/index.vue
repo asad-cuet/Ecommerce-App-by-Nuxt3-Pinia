@@ -2,7 +2,14 @@
     <div>
         <div class="py-3 mb-4 shadow-sm bg-warning border-top">
             <div class="container">
-                    <h6 class="mb-0">Products</h6>      
+                <div class="row">
+                    <div class="col">
+                        <h6 class="mb-0">Products</h6>      
+                    </div>
+                    <div class="col-2 float-right">
+                        <NuxtLink to="/products/add-product" class="btn btn-primary float-right">Add Products</NuxtLink>
+                    </div>
+                </div>
             </div>       
         </div>   
 

@@ -1,7 +1,5 @@
 <template>
     <div>
-        {{$route.params.id}}
-        {{product}}
 
         <div class="py-3 mb-4 shadow-sm bg-warning border-top">
             <div class="container">
@@ -16,16 +14,16 @@
                         <div class="row">
                             <form>
                                 <div class="col-md-4 border-roght">
-                                    <img src="/products/oppo.jpg" alt="image" class="w-100">
+                                    <img :src="product.image" alt="image" class="w-50">
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <h2 class="mb-0">
-                                            Name
+                                            {{ product.name }}
                                             <label style="font-size:16px;" class="float-end badge bg-danger trending_tag">Trending</label>
                                     </h2>
                                     <hr>
-                                    <label class="me-3">Original Price: <s>$ 34</s></label>
-                                    <label class="fw-bold">Selling Price: $32</label>
+                                    <label class="me-3">Original Price: <s>${{ product.original_price }}</s></label>
+                                    <label class="fw-bold">Selling Price: ${{ product.sale_price }}</label>
 
                                     <div class="row mt-2">
                                             <div class="col-md-3">
@@ -47,17 +45,12 @@
                             </form>
                         </div>
 
-                        <div class="row">
-                                <div class="col-md-12">
-                                    <hr>
-                                    <h5>Description</h5>
-                                    <p class="mt-3">
-                                            uewqueiq weqwie wid iwuyeqw deiurqwid iuewiu we
-                                    </p>                              
-                            </div> 
-                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
-                        <hr>
+
 
                     </div>
             </div>
@@ -77,7 +70,7 @@ const productStore=useProduct()
 const route= useRoute()
 
 const product= productStore.getProduct(route.params.id)
-console.log(product)
+
 
 
 const quantity=ref(1)

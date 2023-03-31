@@ -35,9 +35,10 @@ export const useProduct = defineStore('product', () => {
 
     // }
     function getProduct(_id) {
-        products.value.find(product=> {
-            if(product.id === _id)
+        return products.value.find(product=> {
+            if(product.id.toString() === _id)
             {
+                console.log(product.id)
                 return product
             }
         })
