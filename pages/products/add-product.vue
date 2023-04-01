@@ -22,7 +22,7 @@
 
                     <div class="mb-3">
                         <label for="formFileSm" class="form-label">Select Image</label>
-                        <input class="form-control form-control-sm" id="formFileSm" type="file" v-on:change="handleChange(this)">
+                        <input class="form-control form-control-sm" id="formFileSm" type="file" @change="handleChange">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -43,38 +43,37 @@ const sale_price=ref()
 
 
 const file=ref(null)
-const fileError=ref(null)
+
 const types=['image/png','image/jpeg','image/jpg']
 
-function handleChange(e)
+function handleChange(e) 
         {
-            console.log(e)
-            // const selected = e.target.files[0]   //it's a object. Contain: type, size (KB), name(name.ext) etc
+            console.log(e.target.files[0])
+            const selected = e.target.files[0]   //it's a object. Contain: type, size (KB), name(name.ext) etc
             
-            // if(selected && types.includes(selected.type))
-            // {
-            //     file.value=selected
-            //     fileError.value=null
-            //     console.log(selected)
-            // }
-            // else
-            // {
-            //     file.value=null
-            //     fileError.value='Please select an image file'
-            // }
+            if(selected && types.includes(selected.type))
+            {
+                file.value=selected
+                console.log(selected)
+            }
+            else
+            {
+                file.value=null
+                console.log('Please select an image file')
+            }
         }
 
 
 
 function handleSubmit()
 {
-    const formData={
+    const imputData={
     name:name.value,
     original_price:original_price.value,
     sale_price:sale_price.value,
     image:''
-}
-    console.log(formData)
+    }
+    console.log(imputData)
 }
 
 </script>
