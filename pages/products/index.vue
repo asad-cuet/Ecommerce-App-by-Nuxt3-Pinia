@@ -16,11 +16,9 @@
         <div class="py-5">
             <div class="container">
                     <div class="row">
-
-                        <div v-for="product in productStore.products">
                     
                     
-                            <div class="col-md-3 mb-3">
+                            <div v-for="product in productStore.products" class="col-md-3 mb-3">
                                     <div class="card">
                                     <NuxtLink :to="`/products/${product.id}`">
                                     
@@ -36,7 +34,7 @@
 
                             </div>
 
-                        </div>
+
 
                     </div>
             </div>
