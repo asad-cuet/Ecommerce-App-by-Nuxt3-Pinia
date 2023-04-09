@@ -22,11 +22,11 @@
                                     <div class="card">
                                     <NuxtLink :to="`/products/${product.id}`">
                                     
-                                        <img :src="product.image" :alt="product.name" class="w-100" />
+                                        <img :src="product.image" :alt="product.title" class="w-100" />
                                         <div class="card-body">
                                                 <h5>{{product.name}}</h5>
-                                                <span class="float-start">${{ product.sale_price }}</span>
-                                                <span class="float-end"><s>${{ product.original_price }}</s></span>
+                                                <span class="float-start">${{ product.price }}</span>
+                                                <span class="float-end"><s>${{ product.price }}</s></span>
                                         </div>
                                 
                                     </NuxtLink>   
